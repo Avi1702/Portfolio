@@ -1,13 +1,19 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import Toolstack from "./Toolstack"
+import Particle  from "../Particle"
+import Github from "./Github"
+import { Container} from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiReact,
   DiNodejs,
   DiMongodb,
-  DiPython,
   DiGit,
+  DiHtml5,
+  DiCss3,
+  DiDatabase
 } from "react-icons/di";
 import {
   SiPytorch,
@@ -17,9 +23,20 @@ import {
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+  //   <section>
+  //   <Container id="skill">    <h1 className="project-heading">
+  //   Professional <strong className="purple">Skillset </strong>
+  // </h1>
+  // <Container id="skills">
+<Container fluid className="skills-section" id="skills" style={{color:"white"}}> 
+  <Particle />
+  <Container>
+  <h1 className="project-heading">
+  Professional <strong className="purple">Skillset </strong>
+</h1>
+    <Row style={{ justifyContent: "center", paddingBottom: "50px" }} >
       <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
+        <DiHtml5 />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiJavascript1 />
@@ -33,22 +50,35 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons">
         <DiMongodb />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      {/* <Col xs={4} md={2} className="tech-icons">
         <SiNextdotjs />
+      </Col> */}
+      {/* <Col xs={4} md={2} className="tech-icons">
+        <DiDatabase />
+      </Col> */}
+      <Col xs={4} md={2} className="tech-icons">
+        <DiCss3 />
       </Col>
+      {/* <Col xs={4} md={2} className="tech-icons">
+        <CgCPlusPlus />
+      </Col> */}
       <Col xs={4} md={2} className="tech-icons">
         <DiGit />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPytorch />
-      </Col>
     </Row>
+   
+    
+
+        {/* // <Techstack /> */}
+
+        <h1 className="project-heading">
+          <strong className="purple">Tools</strong> I use
+        </h1>
+        <Toolstack />
+
+        <Github />
+        </Container>
+        </Container>
   );
 }
 

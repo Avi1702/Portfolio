@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import {Link} from "react-scroll";
 import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
 import {
@@ -32,6 +33,7 @@ function NavBar() {
 
   return (
     <Navbar
+    id="navbar"
       expanded={expand}
       fixed="top"
       expand="md"
@@ -39,7 +41,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+          <img style={{width:"20%", height:"30px"}} src={"https://pluspng.com/img-png/binary-code-png-binary-code-icon-512.png"} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -51,48 +53,74 @@ function NavBar() {
           <span></span>
           <span></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
+        {/* <div style={{display:"flex",width:"50%",justifyContent:"space-around"}}> */}
+       
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+          <div style={{color:"white",marginTop:"12px"}}>
+            {/* <Nav.Item> */}
+              <Link as={Link} to="home" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
+              </Link>
+            {/* </Nav.Item> */}
+            </div>
 
-            <Nav.Item>
-              <Nav.Link
+            {/* <Nav.Item color={"white"}> */}
+            <div style={{color:"white",margin:"12px"}}>
+              <Link
                 as={Link}
-                to="/about"
+                to="about"
+                spy={true}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
+              </Link>
+              </div>
 
-            <Nav.Item>
-              <Nav.Link
+              <div style={{color:"white",margin:"12px"}}>
+              <Link
                 as={Link}
-                to="/project"
+                to="skills"
+                spy={true}
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> Skills
+              </Link>
+              </div>
+        
+
+            <div style={{color:"white",margin:"12px"}}>
+              <Link
+                as={Link}
+                to="projects"
+                spy={true}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
-              </Nav.Link>
-            </Nav.Item>
+              </Link>
+              </div>
+            {/* </Nav.Item> */}
 
-            <Nav.Item>
-              <Nav.Link
+            {/* <Nav.Item> */}
+            <div style={{color:"white",margin:"12px"}}>
+              <Link
                 as={Link}
-                to="/resume"
+                to="resume"
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
+              </Link>
+              </div>
 
-            <Nav.Item>
+              </Nav>
+        {/* </Navbar.Collapse> */}
+             
+            {/* </Nav.Item> */}
+
+            {/* <Nav.Item>
               <Nav.Link
                 href="https://blogs.soumya-jit.tech/"
                 target="_blank"
@@ -100,9 +128,9 @@ function NavBar() {
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
-            <Nav.Item className="fork-btn">
+            {/* <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/soumyajit4419/Portfolio"
                 target="_blank"
@@ -111,9 +139,9 @@ function NavBar() {
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
                 <AiFillStar style={{ fontSize: "1.1em" }} />
               </Button>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
+            </Nav.Item> */}
+      
+        
       </Container>
     </Navbar>
   );
