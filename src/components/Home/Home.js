@@ -7,7 +7,7 @@ import Type from "./Type";
 // import Resume from "../Resume/ResumeNew"
 import { AiOutlineDownload } from "react-icons/ai";
 import Button from "react-bootstrap/Button";
-import pdf from "../../Assets/Soumyajit_Behera-BIT_MESRA.pdf";
+// import pdf from "../../Assets/Soumyajit_Behera-BIT_MESRA.pdf";
 // import ResumeNew from "../Resume/ResumeNew";
 
 
